@@ -8,6 +8,8 @@ public class Cliente {
     private String rg;
     private String cpf;
     private String email;
+    private String telefone;
+    private String celular;
     private String cep;
     private String endereço;
     private int numero;
@@ -110,6 +112,22 @@ public class Cliente {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
 }
