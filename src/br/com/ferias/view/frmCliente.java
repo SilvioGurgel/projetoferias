@@ -376,7 +376,7 @@ public class frmCliente extends javax.swing.JFrame {
                 .addContainerGap(100, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Consulta de clientes", pClientes);
+        jTabbedPane1.addTab("Dados Pessoais", pClientes);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -450,7 +450,7 @@ public class frmCliente extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Dados pessoais", jPanel2);
+        jTabbedPane1.addTab("Consulta de Clientes", jPanel2);
 
         btSalvar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btSalvar.setText("Salvar");

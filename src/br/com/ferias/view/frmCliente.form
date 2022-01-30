@@ -125,8 +125,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Consulta de clientes">
-                <Property name="tabTitle" type="java.lang.String" value="Consulta de clientes"/>
+              <JTabbedPaneConstraints tabName="Dados Pessoais">
+                <Property name="tabTitle" type="java.lang.String" value="Dados Pessoais"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -534,8 +534,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Dados pessoais">
-                <Property name="tabTitle" type="java.lang.String" value="Dados pessoais"/>
+              <JTabbedPaneConstraints tabName="Consulta de Clientes">
+                <Property name="tabTitle" type="java.lang.String" value="Consulta de Clientes"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
