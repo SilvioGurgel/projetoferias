@@ -7,6 +7,7 @@ package br.com.ferias.view;
 import br.com.ferias.model.Utilitarios;
 import br.com.ferias.dao.ClienteDAO;
 import br.com.ferias.model.Cliente;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -221,6 +222,11 @@ public class frmCliente extends javax.swing.JFrame {
         jLabel13.setText("CEP:");
 
         txtCep.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCep.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCepKeyPressed(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel14.setText("Cidade:");
@@ -264,7 +270,7 @@ public class frmCliente extends javax.swing.JFrame {
         });
 
         cbEstado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CE", "RJ" }));
+        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
 
         javax.swing.GroupLayout pClientesLayout = new javax.swing.GroupLayout(pClientes);
         pClientes.setLayout(pClientesLayout);
@@ -700,6 +706,22 @@ public class frmCliente extends javax.swing.JFrame {
         }
             
     }//GEN-LAST:event_btBuscaClienteActionPerformed
+
+    private void txtCepKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCepKeyPressed
+        // TODO add your handling code here:
+        //Programacao do keypress
+	if (evt.getKeyCode() == KeyEvent.VK_ENTER) { 
+         Cliente obj =  new Cliente();
+         ClienteDAO dao = new ClienteDAO();
+         obj = dao.buscaCep(txtCep.getText());
+         
+         txtEndereço.setText(obj.getEndereço());
+         txtBairro.setText(obj.getBairro());
+         txtCidade.setText(obj.getCidade());
+         cbEstado.setSelectedItem(obj.getEstado());               
+         
+     }
+    }//GEN-LAST:event_txtCepKeyPressed
 
     /**
      * @param args the command line arguments

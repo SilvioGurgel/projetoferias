@@ -3,6 +3,7 @@ package br.com.ferias.dao;
 
 import br.com.ferias.jdbc.ConnectionFactory;
 import br.com.ferias.model.Cliente;
+import br.com.ferias.model.WebServiceCep;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -215,6 +216,27 @@ public class ClienteDAO {
             return null;
         }
         }
+    
+    public Cliente buscaCep(String cep) {
+       
+        WebServiceCep webServiceCep = WebServiceCep.searchCep(cep);
+       
+
+        Cliente obj = new Cliente();
+
+        if (webServiceCep.wasSuccessful()) {
+            obj.setEndereço(webServiceCep.getLogradouroFull());
+            obj.setCidade(webServiceCep.getCidade());
+            obj.setBairro(webServiceCep.getBairro());
+            obj.setEstado(webServiceCep.getUf());
+            return obj;
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro numero: " + webServiceCep.getResulCode());
+            JOptionPane.showMessageDialog(null, "Descrição do erro: " + webServiceCep.getResultText());
+            return null;
+        }
+
+    }
   
 }
         
